@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Zero-dep OpenAI-compatible MCP server exposing ComputeFlux (or any OpenAI-compat) models as tools for MCP agents",
   "type": "module",
-  "mcpName": "io.github.computeisgod/mcp-computeflux",
+  "mcpName": "io.github.computeflux2026isgod/mcp-computeflux",
   "bin": { "mcp-computeflux": "server.mjs" },
   "files": ["server.mjs", "README.md", "server.json", "LICENSE"],
   "scripts": {

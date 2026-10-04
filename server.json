@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-06-18/server.schema.json",
-  "name": "io.github.computeisgod/mcp-computeflux",
+  "name": "io.github.computeflux2026isgod/mcp-computeflux",
   "title": "ComputeFlux",
   "description": "Zero-dependency MCP server exposing ComputeFlux (an OpenAI-compatible, TEE-verifiable multi-model inference gateway deployed on the Polkadot testnet) to any MCP host. Two tools: list models, and run a chat completion over one OpenAI-compatible endpoint.",
   "repository": {
-    "url": "https://github.com/computeisgod/mcp-computeflux",
+    "url": "https://github.com/computeflux2026isgod/mcp-computeflux",
     "source": "github"
   },
   "version": "1.0.0",
