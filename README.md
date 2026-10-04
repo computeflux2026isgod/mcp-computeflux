@@ -35,25 +35,31 @@ export COMPUTEFLUX_API_KEY="your_c***_key"
 
 ## Install
 
-From the [official MCP Registry](https://registry.modelcontextprotocol.io) / npm
-once published (stdio transport). Quickstart:
+Published on the **official MCP Registry** (`.mcpb` bundle, no npm step):
+
+`io.github.computeflux2026isgod/mcp-computeflux` — listed on the [official MCP Registry](https://registry.modelcontextprotocol.io) (search by this name).
+
+Any MCP client / agent that supports registry install (`mcp add`, Cursor, Claude Desktop,
+Claude Code) can pull it by name. Direct git-clone quickstart:
+
+```bash
+git clone https://github.com/computeflux2026isgod/mcp-computeflux
+export COMPUTEFLUX_API_KEY="your_...key"
+node /path/to/mcp-computeflux/server.mjs   # stdio JSON-RPC
+```
+
+mcpServers snippet:
 
 ```json
 {
   "mcpServers": {
     "computeflux": {
       "command": "node",
-      "args": ["/path/to/server.mjs"],
+      "args": ["/path/to/mcp-computeflux/server.mjs"],
       "env": { "COMPUTEFLUX_API_KEY": "your_c***_key" }
     }
   }
 }
-```
-
-Or via npx after publish:
-
-```bash
-npx mcp-computeflux
 ```
 
 ## Local e2e (optional)
