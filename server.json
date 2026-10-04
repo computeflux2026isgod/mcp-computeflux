@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-06-18/server.schema.json",
+  "name": "io.github.computeisgod/mcp-computeflux",
+  "title": "ComputeFlux",
+  "description": "Zero-dependency MCP server exposing ComputeFlux (an OpenAI-compatible, TEE-verifiable multi-model inference gateway deployed on the Polkadot testnet) to any MCP host. Two tools: list models, and run a chat completion over one OpenAI-compatible endpoint.",
+  "repository": {
+    "url": "https://github.com/computeisgod/mcp-computeflux",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "mcp-computeflux",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "COMPUTEFLUX_API_KEY",
+          "description": "Bearer key for the OpenAI-compatible endpoint (required).",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "COMPUTEFLUX_BASE_URL",
+          "description": "OpenAI-compatible base URL. Defaults to https://api.computeflux.ai/v1.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string",
+          "default": "https://api.computeflux.ai/v1"
+        }
+      ]
+    }
+  ]
+}
