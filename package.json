@@ -5,13 +5,13 @@
   "type": "module",
   "mcpName": "io.github.computeflux2026isgod/mcp-computeflux",
   "bin": { "mcp-computeflux": "server.mjs" },
-  "files": ["server.mjs", "README.md", "server.json", "LICENSE"],
+  "files": ["server.mjs", "README.md", "server.json", "LICENSE", "manifest.mcpb.json"],
   "scripts": {
     "start": "node server.mjs",
-    "e2e": "node client/e2e.mjs"
+    "e2e": "node client/e2e.mjs",
+    "build:mcpb": "bash build_mcpb.sh"
   },
   "keywords": ["mcp", "model-context-protocol", "openai", "multi-model", "inference", "computeflux", "gateway"],
   "engines": { "node": ">=18" },
-  "license": "MIT",
-  "publishConfig": { "access": "public" }
+  "license": "MIT"
 }

@@ -1,0 +1,50 @@
+{
+  "manifest_version": "0.3",
+  "name": "mcp-computeflux",
+  "display_name": "mcp-computeflux",
+  "version": "1.0.0",
+  "description": "Zero-dep MCP server exposing ComputeFlux (or any OpenAI-compatible) models to MCP agents.",
+  "long_description": "Gives any MCP host (Claude Desktop, Claude Code, Cursor, Windsurf) two tools over stdio: computeflux_models to list available models and computeflux_chat to chat with any of them. stdlib-only, no node_modules, single server.mjs. Point it at ComputeFlux or any OpenAI-compatible gateway.",
+  "author": {
+    "name": "ComputeFlux"
+  },
+  "homepage": "https://github.com/computeflux2026isgod/mcp-computeflux",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/computeflux2026isgod/mcp-computeflux"
+  },
+  "keywords": ["mcp", "llm", "openai-compatible", "computeflux"],
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "server.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server.mjs"],
+      "env": {
+        "COMPUT..._KEY": "${user_config.computeflux_api_key}",
+        "COMPUT..._URL": "${user_config.computeflux_base_url}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "computeflux_models", "description": "List the model IDs available on the configured OpenAI-compatible endpoint" },
+    { "name": "computeflux_chat", "description": "Chat with any configured model (system + user turns, max_tokens, temperature)" }
+  ],
+  "user_config": {
+    "computeflux_api_key": {
+      "type": "string",
+      "title": "ComputeFlux API Key",
+      "description": "API key for the OpenAI-compatible endpoint. Required.",
+      "sensitive": true,
+      "required": true
+    },
+    "computeflux_base_url": {
+      "type": "string",
+      "title": "Base URL (OpenAI-compatible)",
+      "description": "v1 base URL. Leave blank to default to https://api.computeflux.ai/v1",
+      "required": false,
+      "default": "https://api.computeflux.ai/v1"
+    }
+  }
+}
