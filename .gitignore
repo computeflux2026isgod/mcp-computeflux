@@ -1,7 +1,3 @@
-node_modules/
-client/node_modules/
-client/package-lock.json
-.env
+login.out
 *.log
-.DS_Store
-*.mcpb
+node_modules/
